@@ -14,7 +14,12 @@ const handler = NextAuth({
   async signIn({ profile }) {
     try {
       await connectToDB();
-    } catch (error) {}
+
+      return true;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
   },
 });
 
